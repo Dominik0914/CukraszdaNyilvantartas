@@ -18,10 +18,17 @@ for (int i=0;i<4;i++)
 //4.1feladat
 int osszes = 0;
 int fullossz = 0;
+double arak = 0;
 Console.WriteLine("Pultban lévő sütemények:");
 for (int i=0;i<sutik.Count;i++)
 {
     osszes = sutik[i].Egysegar * sutik[i].RaktaronDb;
     fullossz += sutik[i].Egysegar * sutik[i].RaktaronDb;
     Console.WriteLine($"{sutik[i].Nev}: {sutik[i].Egysegar} FT / db {sutik[i].RaktaronDb} db)-> Összérték: {osszes} FT");
+    arak += sutik[i].Egysegar;
 }
+//4.2
+Console.WriteLine($"Pult teljes készletértéke: {fullossz} Ft");
+double atlag = arak / sutik.Count;
+
+Console.WriteLine($"Sütemények átlagos egységára: {atlag:f0} Ft");
